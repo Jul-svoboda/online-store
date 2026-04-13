@@ -1,9 +1,10 @@
 .cart {
     position: fixed;
-    right: 60px;
-    top: 150px;
+    right: 20px;
+    top: 120px;
     width: 450px;
-    background: #fff;
+    background-color: #ecded1;;
     padding: 20px;
-    z-index: 1000;
+    -webkit-box-shadow: 4px 5px 15px 7px rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 5px 15px 7px rgba(0, 0, 0, 0.1);
 }

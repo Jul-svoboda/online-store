@@ -11,7 +11,7 @@ export class Item extends Component {
           <p>{this.props.item.desc}</p>
           <b>{this.props.item.price.toFixed(2)}$</b>
         </div>
-        <button className={style.item__button}>Add to Cart</button>
+        <button onClick={() => this.props.onAddToOrder(this.props.item)} className={style.item__button}>Add to Cart</button>
       </div>
     )
   }

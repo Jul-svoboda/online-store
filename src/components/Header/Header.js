@@ -4,7 +4,7 @@ import { RiShoppingCartLine } from "react-icons/ri";
 import Cart from '../Cart/Cart';
 
 
-export default function Header() {
+export default function Header({ orders }) {
     let [cartOpen, setCartOpen] = React.useState(false);
   return (
     <header>
@@ -20,7 +20,7 @@ export default function Header() {
                 </ul>
             </div>
             {cartOpen && (
-                < Cart />
+                <Cart orders={orders}/>
             )}
         </div>
         <div className={styles.presentation}>
