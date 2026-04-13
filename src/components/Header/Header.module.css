@@ -11,6 +11,7 @@
     padding: 10px 60px;
     z-index: 1000;
     background-color: #ecded1;
+    color: #443019;
 }
 
 .header__actions {
@@ -21,13 +22,15 @@
 }
 
 .header__cart {
-    color: #8f6433;
-    transition: color, transform 0.3s ease;
+    color: #443019;;
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    transition: color 0.3s ease;
 }
 
 .header__cart:hover, .header__cart--active {
-    color: #e04d08;
-    transform: scale(1.3);
+    color: #bb6f0b;
 }
 
 .header__nav {
@@ -37,9 +40,9 @@
 }
 
 .header__nav li {
-    font-size: 18px;
-    font-weight: 500;
-    color: #333;
+    font-weight: 400;
+    font-size: 24px;
+    color: #443019;
     transition: opacity 0.3s ease;
 }
 
@@ -53,7 +56,7 @@
 }
 
 .presentation {
-    margin: 120px 0;
+    margin-top: 120px;
     background: url(../../img/ce288bcbf9be2212fc7b08ed3ec1b849.jpg) no-repeat center;
     width: 100%;
     height: 500px;

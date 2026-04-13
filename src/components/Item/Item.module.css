@@ -26,6 +26,7 @@
 }
 
 .item__text {
+    color: #443019;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -43,8 +44,11 @@
     width: 100%;
     padding: 20px 20px;
     border-radius: 0 0 5px 5px;
+    color: #443019;
     background-color: #8f64338e;
     transition: background-color 0.3s ease;
+    font-weight: 500;
+    font-size: 24px;
 }
 
 .item__button:hover {

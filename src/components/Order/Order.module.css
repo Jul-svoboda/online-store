@@ -2,5 +2,41 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    min-height: 60px;
+    border-bottom: 2px solid #bb6f0b;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.order__icon {
+    height: 30px;
+    width: 30px;
+}
+.order__title {
+    width: 200px;
+}
+.order__count {
+    display: flex;
+    flex-direction: row;
+    min-width: 80px;
+    justify-content: space-between;
+}
+.order__price {
+    display: flex;
+    flex-direction: row;
+    min-width: 100px;
+    justify-content: space-between;
+    color: #bb6f0b;
+}
+
+.order__trash {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+.order__trash:hover {
+    color: #e04d08;
 }

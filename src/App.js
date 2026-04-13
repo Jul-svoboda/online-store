@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Items from "./components/Items/Items";
+import Categories from "./components/Categories/Categories";
 
 
 
@@ -11,6 +12,7 @@ class App extends React.Component {
         super(props);
         this.state = {
             orders: [],
+            currentItems: [],
             items: [
                         {
                         id: 1,
@@ -134,20 +136,47 @@ class App extends React.Component {
                         }
             ]
         }
+        this.state.currentItems = this.state.items;
         this.addToOrder = this.addToOrder.bind(this);
+        this.deleteOrder = this.deleteOrder.bind(this);
+        this.chooseCategory = this.chooseCategory.bind(this);
     }
-
     render() {
         return (
             <div className="wrapper">
-                <Header orders={this.state.orders} />
-                <Items items={this.state.items} onAddToOrder={this.addToOrder} />
+                <Header orders={this.state.orders} onDeleteOrder={this.deleteOrder} />
+                <Categories onChooseCategory={this.chooseCategory} />
+                <Items items={this.state.currentItems} onAddToOrder={this.addToOrder} />
                 <Footer />
             </div>
         );
     }
+
+    chooseCategory(category) {
+        category === 'all'
+        ? this.setState({currentItems: this.state.items})
+        : this.setState({currentItems: this.state.items.filter(el => el.category === category)})
+    }
+
+    deleteOrder(id) {
+        this.setState({orders: this.state.orders.filter(el => el.id !== id)})
+    }
+
     addToOrder(item) {
-        this.setState({orders: [...this.state.orders, item]})
+        this.setState(prevState => {
+            const existingItem = prevState.orders.find(el => el.id === item.id);
+            if (existingItem) {
+                return {
+                    orders: prevState.orders.map(el =>
+                        el.id ===item.id
+                        ? {...el, count: (el.count || 1) + 1}
+                        : el
+                    )}
+            }
+            return {
+                orders:[...prevState.orders, {...item, count: 1}]
+            } 
+        })
     }
 }
 
