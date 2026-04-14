@@ -6,13 +6,18 @@ import Cart from '../Cart/Cart';
 
 export default function Header({ orders, onDeleteOrder }) {
     let [cartOpen, setCartOpen] = React.useState(false);
+    let [menuOpen, setMenuOpen] = React.useState(false);
   return (
     <header>
         <div className={styles.header}>
             <span className={styles.logo}>House Staff</span>
             <div className={styles.header__actions}>
                 <RiShoppingCartLine onClick={() => setCartOpen(cartOpen => !cartOpen)} className={`${styles.header__cart} ${cartOpen ? styles["header__cart--active"] : ''}`} />
-                <ul className={styles.header__nav}>
+                <div className={styles["header__burger-menu"]} onClick={() => setMenuOpen(!menuOpen)}>
+                    <div></div>
+                    <div></div>
+                </div>
+                <ul className={`${menuOpen ? styles["header__nav--active"] : `${styles.header__nav}`}`}>
                     <li><a href="/">Home</a></li>
                     <li><a href="/products">Products</a></li>
                     <li><a href="/about">About</a></li>

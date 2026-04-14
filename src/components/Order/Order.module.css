@@ -1,6 +1,7 @@
 .order {
     display: flex;
     flex-direction: row;
+    gap: 10px;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
@@ -9,33 +10,63 @@
     border-bottom: 2px solid #bb6f0b;
     font-size: 24px;
     font-weight: 500;
+
+    @media (max-width: 480px) {
+        font-size: 18px;
+    }
 }
 
 .order__icon {
     height: 30px;
     width: 30px;
+
+    @media (max-width: 480px) {
+        height: 20px;
+        width: 20px;
+    }
 }
+
 .order__title {
     width: 200px;
+    @media (max-width: 480px) {
+        width: 100px;
+    }
 }
+
 .order__count {
     display: flex;
     flex-direction: row;
-    min-width: 80px;
+    width: 30px;
     justify-content: space-between;
+    color: #443019;
+
+    @media (min-width: 1200px) {
+        width: 50px;
+    }
 }
 .order__price {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    gap: 10px;
     min-width: 100px;
     justify-content: space-between;
     color: #bb6f0b;
+
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+    }
 }
 
 .order__trash {
     height: 30px;
     width: 30px;
     cursor: pointer;
+
+    @media (max-width: 480px) {
+        height: 20px;
+        width: 20px;
+    }
 }
 .order__trash:hover {
     color: #e04d08;

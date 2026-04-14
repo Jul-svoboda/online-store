@@ -1,6 +1,7 @@
 .item {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     width: 500px;
@@ -10,6 +11,12 @@
     background-color: antiquewhite;
     overflow: hidden;
     gap: 40px;
+
+    @media (max-width: 1200px) {
+        width: 300px;
+        margin: 20px 0;
+        gap: 20px;
+    }
 }
 
 .item img {
@@ -19,6 +26,10 @@
     border-radius: 5px 5px 0 0;
     transition: transform 0.3s ease;
     cursor: pointer;
+
+    @media (max-width: 1200px) {
+        height: 300px;
+    }
 }
 
 .item img:hover {
@@ -33,6 +44,22 @@
     gap: 20px;
     text-align: center;
     padding: 0 20px;
+
+    @media (max-width: 1200px) {
+        gap: 10px;
+    }
+}
+
+.item__text h2 {
+    @media (max-width: 1200px) {
+        font-size: 26px;
+    }
+}
+
+.item__text p {
+    @media (max-width: 1200px) {
+        display: none;
+    }
 }
 
 .item__text b {

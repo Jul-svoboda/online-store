@@ -18,12 +18,11 @@ export class Order extends Component {
       <div className={styles.order}>
         {categoryIcons[this.props.order.category]}
         <p className={styles.order__title}>{this.props.order.title}</p>
-        <div className={styles.order__count}>
-            <p>x</p><p> {this.props.order.count}</p>
-        </div>
         <div className={styles.order__price}>
-            <p>{(this.props.order.price * this.props.order.count).toFixed(2)}</p>
-            <p>$</p>
+            <div className={styles.order__count}>
+                <p>x</p><p> {this.props.order.count}</p>
+            </div>
+            <p>{(this.props.order.price * this.props.order.count).toFixed(2)}&nbsp;$</p>
         </div>
         <HiOutlineTrash className={styles.order__trash} onClick={() => this.props.onDeleteOrder(this.props.order.id)}/>
       </div>

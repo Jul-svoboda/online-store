@@ -14,8 +14,8 @@ export class ShowFullItem extends Component {
                 <h2>{this.props.item.title}</h2>
                 <p>{this.props.item.desc}</p>
                 <b>{this.props.item.price.toFixed(2)}$</b>
+                <button onClick={() => this.props.onAddToOrder(this.props.item)} className={styles['full-item__button']}>Add to Cart</button>
             </div>
-            <button onClick={() => this.props.onAddToOrder(this.props.item)} className={styles['full-item__button']}>Add to Cart</button>
         </div>
       </div>
     )

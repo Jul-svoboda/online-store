@@ -1,17 +1,21 @@
 .header {
     position: fixed;
+    min-width: 100%;
     top: 0;
     left: 0;
-    right: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 50px;
-    padding: 10px 60px;
+    padding: 20px 60px;
     z-index: 1000;
     background-color: #ecded1;
     color: #443019;
+
+    @media (max-width: 1200px) {
+        padding: 20px;
+    }
 }
 
 .header__actions {
@@ -19,14 +23,40 @@
     flex-direction: row-reverse;
     align-items: center;
     gap: 60px;
+    @media (max-width: 1200px) {
+        gap: 20px;
+        flex-direction: row;
+    }
+}
+
+.header__burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+
+    @media (max-width: 1200px) {
+        display: flex;
+    }
+}
+
+.header__burger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: #443019;
 }
 
 .header__cart {
-    color: #443019;;
+    color: #443019;
     cursor: pointer;
     width: 34px;
     height: 34px;
     transition: color 0.3s ease;
+
+    @media (max-width: 1200px) {
+        width: 24px;
+        height: 24px;
+    }
 }
 
 .header__cart:hover, .header__cart--active {
@@ -36,23 +66,53 @@
 .header__nav {
     list-style: none;
     display: flex;
+    flex-direction: row;
     gap: 20px;
+
+    @media (max-width:1200px) {
+        display: none;
+    }
 }
 
-.header__nav li {
+.header__nav--active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 90px;
+    right: 0;
+    list-style: none;
+    background-color: #ecded1;
+    padding: 10px 20px;
+    gap: 20px;
+
+    @media (max-width: 7678px) {
+        top: 75px;
+    }
+}
+
+.header__nav li a, .header__nav--active li a {
     font-weight: 400;
     font-size: 24px;
     color: #443019;
     transition: opacity 0.3s ease;
 }
 
-.header__nav li:hover {
+.header__nav li:hover, .header__nav--active li:hover {
     opacity: 0.7;
 }
 
 .logo {
     font-weight: 600;
     font-size: 70px;
+
+    @media (max-width: 1200px) {
+        font-weight: 600;
+        font-size: 50px;
+    }
+    @media (max-width: 768px) {
+        font-weight: 600;
+        font-size: 30px;
+    }
 }
 
 .presentation {
@@ -65,24 +125,37 @@
     background-blend-mode: multiply;
     background-color: #8169196e;
     position: relative;
+
+        @media (max-width: 1200px) {
+            margin-top: 80px;
+        }
+        @media (max-width: 768px) {
+            margin-top: 60px;
+        }
 }
 
 .presentation__title {
     position: absolute;
     top: 100px;
     left: 50px;
-    width: 300px;
+    max-width: 300px;
     color: #fff;
     font-size: 40px;
     font-weight: 600;
+
+        @media (max-width: 1200px) {
+            font-size: 30px;
+            padding-right: 20px;
+        }
 }
 
 .presentation__subtitle {
     position: absolute;
     top: 300px;
     left: 50px;
-    width: 200px;
+    max-width: 200px;
     color: #fff;
     font-size: 15px;
     font-weight: 300;
+    padding-right: 20px;
 }
